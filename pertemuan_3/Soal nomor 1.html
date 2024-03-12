@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with HTML Tags</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #4CAF50;
+            color: white;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        fieldset {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        legend {
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: calc(100% - 22px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>One Week Course Sign Up Page</h1>
+
+    <form action="#" method="get">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="no">Prefer not to say</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Course</legend>
+            <label for="course">Choose your course:</label>
+            <select id="course" name="course">
+                <optgroup label="Data Course">
+                    <option value="SQL">SQL</option>
+                    <option value="AI">AI</option>
+                    <option value="Statistics">Statistics</option>
+                </optgroup>
+                <optgroup label="Web Course">
+                    <option value="UI/UX">UI/UX</option>
+                    <option value="HTML">HTML</option>
+                    <option value="JavaScript">JavaScript</option>
+                </optgroup>
+            </select>
+
+            <label for="date">Choose the date:</label>
+            <input list="dateOptions" id="date" name="date" 
+            style="width: calc(100% - 22px); padding: 8px; border: 1px solid #ccc;
+            border-radius: 5px; box-sizing: border-box; margin-bottom: 10px;">
+            <datalist id="dateOptions">
+                <option value="Sunday 21 April, 2024">
+                <option value="Monday 22 April, 2024">
+                <option value="Wednesday 24 April, 2024">
+                <option value="Friday 26 April, 2024">
+                <option value="Saturday 27 April, 2024">
+            </datalist>
+        </fieldset>
+
+        <fieldset>
+            <legend>Output</legend>
+            <output id="result"></output>
+        </fieldset>
+
+        <input type="submit" value="Sign Up">  
+
+    </form>
+</body>
+</html>

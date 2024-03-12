@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms and Image</title>
+</head>
+<body style="margin: 20%; margin-top: 0%; background-color: bisque; ">
+    <h2 align="center" style="color: rgb(88, 23, 23); background-color: whitesmoke; margin: 8%; margin-top: 50px; margin-bottom: 20px; padding: 10px; padding: 20px; border-color: brown; box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.368);">Text input fields in HTML</h2>
+
+    <form action="" id="formkeren" method="get" style="margin: 8%; margin-top: 0; border: 20px; padding: 20px; border-color: brown; box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.368); background-color: whitesmoke;">
+        <label for="fname">First name:</label>
+        <br>
+        <input type="text" id="fname" name="fname" autofocus>
+        <br>
+        <label for="lname">Last name:</label>
+        <br>
+        <input type="text" id="lname" name="lname">
+        <br><br>
+
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+
+        <p>Choose your fav Web language:</p>
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">HTML</label>
+        <br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label>
+        <br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+        <br>
+
+        <p>Choose what vehicle do you have:</p>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1">I have a bike</label>
+        <br>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2">I have a car</label>
+        <br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3">I have a boat</label>
+        <br>
+
+        <p>Here you can tell us about your hobby:</p>
+        <textarea name="message" rows="10" cols="30">
+            Please enter here
+        </textarea>
+
+        
+        <br>
+        <br>
+        <label for="fname">First name:</label>
+        <br>
+        <input type="text" id="fname" name="fname" value="Annisa" readonly>
+        <p>*the text above is readonly</p>
+        <br><br>
+
+        <label for="lname">Last name:</label>
+        <br>
+        <input type="text" id="lname" name="lname" value="Ann" disabled>
+        <p>*the text above is disabled</p>
+        <br><br>
+
+        <p>Choose your favorite color:</p>
+        <input type="color" id="colorPicker" name="colorPicker">
+        <br><br>
+
+        <p>Choose your date of birth:</p>
+        <input type="date" id="datePicker" name="datePicker">
+        <br><br>
+
+        <p>Choose what time at the present:</p>
+        <input type="datetime-local" id="datetimePicker" name="datetimePicker">
+        <br><br>
+
+        <p>Please let me know your e-mail below:</p>
+        <input type="email" id="emailInput" name="emailInput">
+        <br><br>
+
+        <p>If you want to share what are you doing right now, let me know too by sending the picture</p>
+        <input type="file" id="filePicker" name="filePicker">
+        <br><br>
+        
+        <p>This is a hidden input</p>
+        <input type="hidden" id="hiddenInput" name="hiddenInput" value="hiddenValue">
+        <br><br>
+
+        <p>This is what I am doing right now ^^</p>
+        <input type="image" src="workshop.jpg" alt="Submit" style="width: 50%;">
+        <br><br>
+
+        <p>Do you have a favorite month?</p>
+        <input type="month" id="monthPicker" name="monthPicker">
+        <br><br>
+
+        <p>Do you have a favorite number?</p>
+        <input type="number" id="numberInput" name="numberInput">
+        <br><br>
+
+        <p>Don't enter anything below because entering password is restricted</p>
+        <input type="password" id="passwordInput" name="passwordInput">
+        <br><br>
+
+        <p>Let me know about your happiness today:</p>
+        <input type="range" id="rangeInput" name="rangeInput" min="0" max="100" value="50">
+        <br><br>
+
+        <p>If you want to reset the answer in this form, click the button below</p>
+        <input type="reset" value="Reset Form">
+        <br><br>
+
+        <p>This is a space if you are looking for something:</p>
+        <input type="search" id="searchInput" name="searchInput">
+        <br><br>
+
+        <p>This is a custom size for input</p>
+        <input type="text" id="fname" name="fname" size="30">
+
+        <br>
+        <p>Enter your username here:</p>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="username">*required</label>
+        <br><br>
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"
+        placeholder="masukkan nama disini">
+        <label for="username">*not required</label>
+        <br><br>
+
+        <input formaction="/action_page2.php" formmethod="post" formenctype="multipart/form-data"
+        type="submit" value="Submit">
+        <br>
+        
+        <p>If you click the Submit button below we will direct you to the main page of Google</p>
+        <input formaction="https://www.google.com" formmethod="get" formtarget="_blank"
+        type="submit" value="Submit">
+        <br><br>
+        
+        <p>If you click the Submit button below we will direct you to this window</p>
+        <input formid="formkeren" formmethod="get" formtarget="_self"
+        type="submit" value="Submit (Open in Same Window)">
+        <br><br>
+        
+        <p>If you click the Submit button below we will direct you to top of this window</p>
+        <input formid="formkeren" formmethod="get" formtarget="_self"
+        type="submit" value="Submit (Open in Top Window)">
+        <br><br>
+
+        <button type="button" onclick="alert('Thank you for sharing!')">Click Me!</button>
+        
+        <input type="submit" value="Submit">
+        <br><br>
+        
+    </form>
+    
+    
+    <svg width="200" height="200">
+        <rect width="200" height="200" style="fill:beige";
+        stroke-width="5" stroke="yellow"/>
+        <circle cx="50" cy="50" r="40" stroke="brown"
+        stroke-width="2" fill="orange"></circle>
+    </svg>
+    <br><br><br>
+
+    <canvas id="myCanvas" width="400" height="200"></canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        ctx.moveTo(0,0);
+        ctx.lineTo(200,100);
+        ctx.stroke();
+
+        ctx.font="30px Segoe UI";
+        ctx.fillText("Hello World", 220,150);
+    </script>
+</body>
+</html>
