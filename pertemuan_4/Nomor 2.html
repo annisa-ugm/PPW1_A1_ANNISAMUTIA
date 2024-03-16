@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            height: 100%;
+            background: linear-gradient(-75deg, rgba(44, 11, 46, 0.8), 
+            rgba(187, 141, 202, 0.8),rgba(8, 7, 112, 0.8), 
+            rgba(83, 16, 183, 0.8));
+            background-size: 400% 400%;
+            background-attachment: fixed; 
+            animation: animate 10s infinite; 
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        @keyframes animate {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+        }
+        header {
+            background-color: #1b0537;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 1s ease;
+            padding-top: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', 
+            Calibri, 'Trebuchet MS', sans-serif;
+        }
+        header.scrolled {
+            background-color: #8c6cb5
+        }
+        header img {
+            border-radius: 50%;
+            position: absolute;
+            left: 120px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+        }
+        nav {
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
+            margin-left: 20px;
+            padding-bottom: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        nav ul li a:hover {
+            color: #f1b5ff;
+        }
+        main {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top: 120px;
+            transition: margin-top 0.3s ease;
+            flex-direction: column;
+            align-items: center;
+        }
+        section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 2px 4px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 60%;
+            margin: 40px;
+        }
+        aside {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.468);
+            padding: 20px;
+            margin: 20px;
+        }
+        .testimonials{
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.468);
+            padding: 20px;
+            margin: 20px;
+            width: 60%;
+        }
+        footer {
+            background-color: #8c6cb5;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', 
+            Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .join {
+            text-align: center;
+            color: #8c6cb5;
+            padding: 10px;
+        }
+        .join button {
+            color: white;
+            background-color: #8c6cb5;
+            border-radius: 50px;
+            box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.269);
+            width: 130px;
+            height: 50px;
+            border-bottom: 0;
+            border-right: 0;
+            border-top: 0;
+            border-left: 0;
+        }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .image-grid img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.518);
+        }
+        </style>    
+</head>
+<body>
+    <header id="header">
+        <h1>Nature's Nurturers</h1>
+        <img src="https://static.vecteezy.com/system/resources/previews/005/883/509/non_2x/leaf-icon-line-icon-style-suitable-for-ecology-symbol-simple-design-editable-design-template-vector.jpg">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <article>
+                <h3>Top Articles</h3>
+                <p>Explore our top articles that provide 
+                    up-to-date and reliable information 
+                    on environmental issues, nature 
+                    conservation, and sustainability.</p>
+            </article>
+            <article>
+                <h3>Featured Content</h3>
+                <p>Discover our featured content highlighting 
+                    important topics such as organic farming, 
+                    renewable energy, and plastic waste 
+                    reduction.</p>
+            </article>  
+            <aside>
+                <h3>Discover Our Tips and Advice</h3>
+                <p>Here, you will find a collection of 
+                    practical tips and advice for living a 
+                    sustainable lifestyle. From reducing 
+                    your carbon footprint 
+                    to starting a backyard vegetable garden, 
+                    we share knowledge that can help you 
+                    become an agent of change for the 
+                    environment.</p>
+            </aside> 
+        </section>
+        <section id="about">
+            <h3>About Us</h3>
+            <p>Nature's Nurturers is a platform dedicated to 
+                inspiring and educating the community about 
+                biodiversity, environmental conservation, and 
+                sustainable living.</p>
+            <aside>
+                <h3>Latest Updates</h3>
+                <p>Stay up-to-date with our latest news, events, 
+                and announcements.</p>
+            </aside>
+        </section>
+
+        <div class="join">
+            <button>Join</button>
+            <button>Later</button>
+        </div>
+        
+        <section id="gallery">
+            <h3>Photo Gallery</h3>
+            <div class="image-grid">
+                <img src="https://images.pexels.com/photos/36753/flower-purple-lical-blosso.jpg?cs=srgb&dl=pexels-pixabay-36753.jpg&fm=jpg" 
+                alt="Gallery Image 1">
+                <img src="https://gardening.org/wp-content/uploads/2022/04/1-purple-geranium.jpg" 
+                alt="Gallery Image 3">
+                <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2011/2/9/0/iStock-13550652_allium_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1400963272059.jpeg" 
+                alt="Gallery Image 2">
+                <img src="https://tophinhanhdep.com/wp-content/uploads/2021/11/Purple-Flower-Wallpapers.jpg" 
+                alt="Gallery Image 2">
+            </div>
+        </section>
+
+        <div class="testimonials">
+            <h3>Testimonials</h3>
+            <p>See what our satisfied customers have to 
+            say about us.</p>
+            <p>"Nature's Nurturers has helped me raise 
+            awareness about the importance of environmental 
+            conservation. 
+            I am deeply inspired by their informative 
+            and insightful articles." - Sarah, Loyal Reader</p>
+
+            <p>"I want to thank Nature's Nurturers for 
+            their valuable tips on organic farming. Now, 
+            I can grow my own vegetables in my backyard!" 
+            - John, Loyal Customer</p>
+        </div>
+        
+    </main>
+    <footer id="contact">
+        <h2>Connect With Us</h2>
+        <p>Join our community and stay updated with our latest 
+        news, events, and promotions.</p>
+    </footer>
+</body>
+</html>
