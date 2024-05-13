@@ -1,0 +1,85 @@
+body {
+    background-color: #e5e5e5;
+}
+.row {
+    padding: 15px 2px 2px 2px;
+}
+.header header {
+    background-color: #fff;
+    padding: 10px 20px;
+}
+nav.menus {
+    background-color: #e74c3c;
+    padding: 10px;
+}
+nav.menus ul {
+    margin: 0;
+    padding: 0;
+    /* display: flex;
+    align-items: baseline;
+    justify-content: center; */
+    /*untuk menengahkan navbar unkomen ini*/
+}
+nav.menus ul li {
+    display: inline-block;
+    align-items: center;
+}
+nav.menus ul li a {
+    display: block;
+    padding: 3px 7px;
+    color: #fff;
+    text-decoration: none; /*disini nambahin text decorationnya*/
+}
+nav.menus ul li a:hover, nav.menus ul li a:focus {
+    text-decoration: none;
+    background-color: #c0392b;
+    color: #fff;            
+    /*a:focus untuk tentukan gaya link saat dpt focus dari keyboard, misal
+    jika menavigasi dgn tombol keyboard sperti Tab maka akan mendapatkan focus*/
+}
+
+
+
+.meta-post {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+article.posts {
+    padding: 10px 20px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+
+aside.widgets {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #fff;
+}
+aside.widgets ul {
+    margin: 0;
+    padding: 0;
+}
+aside.widgets li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.widget-title {
+    border-bottom: 4px solid #E74C3C;
+    padding-bottom: 4px;
+}
+aside.widgets ul li a {
+    text-decoration: none; /*disini nambahin text decor none*/
+    color: black;
+}
+aside.widgets ul li a:hover {
+    color: #c0392b;
+}
+
+
+footer.copyright {
+    padding: 10px 20px;
+    font-size: 12px;
+}
+
