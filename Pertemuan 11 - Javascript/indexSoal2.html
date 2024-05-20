@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Computer Vision</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            background-color: #4682b4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4682b4;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #4169e1;
+        }
+        p {
+            line-height: 1.6;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e6e6fa;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Introduction to Computer Vision</h1>
+    </header>
+    <main>
+        <h2>Understanding Computer Vision</h2>
+        <p>Explore the world of Computer Vision. Open the console to see additional information.</p>
+
+        <!-- Console.log() -->
+        <script>
+            console.log('Welcome to Computer Vision!');
+            const computerVisionApplications = ['Image Recognition', 'Object Detection', 'Facial Recognition'];
+            console.log('Key Applications of Computer Vision:', computerVisionApplications);
+        </script>
+
+        <button onclick="alert('Did you know? Computer Vision is revolutionizing numerous fields!')">Show Alert</button>
+
+        <p id="docWrite"></p>
+
+        <!-- Document.write() -->
+        <script>
+            document.write('<strong>Current Date and Time:</strong> ' + new Date().toLocaleString() + '<br>');
+        </script>
+
+        <div id="output"></div>
+        <script>
+            document.getElementById('output').innerHTML = 
+            '<strong>InnerHTML Example:</strong> Computer Vision is an interdisciplinary field that deals with how computers can gain high-level understanding from digital images or videos.';
+        </script>
+    </main>
+</body>
+</html>

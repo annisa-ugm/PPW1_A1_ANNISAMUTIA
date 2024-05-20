@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JavaScript untuk Pemula</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Belajar JavaScript untuk Pemula</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tutorial">Tutorial</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> 
+        <section id="home">
+            <h2>Selamat Datang</h2>
+            <p>Website ini didedikasikan untuk membantu Anda belajar JavaScript dari dasar hingga mahir. 
+                Mari mulai dengan beberapa konsep dasar!</p>
+            
+            <button onclick="alert('Hello from Inline JavaScript!')">Klik Saya (Inline)</button>
+            
+            <p id="embedMessage"></p>
+            <button onclick="showMessage()">Klik Saya (Embedded)</button>
+        </section>
+
+        <section id="tutorial">
+            <h2>Tutorial JavaScript</h2>
+            <p>Pelajari berbagai konsep JavaScript melalui tutorial-tutorial kami.</p>
+            <div id="tutorialContent"></div>
+        </section>
+
+        <section id="contact">
+            <h2>Kontak Kami</h2>
+            <p>Jika Anda memiliki pertanyaan atau membutuhkan bantuan, jangan ragu untuk menghubungi kami!</p>
+            <form>
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Pesan:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Belajar JavaScript. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showMessage() {
+            document.getElementById('embedMessage').innerHTML = "Hello from Embedded JavaScript!";
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const tutorialContent = document.getElementById('tutorialContent');
+            tutorialContent.innerHTML = `
+                <ul>
+                    <li><strong>Variabel dan Tipe Data:</strong> Memahami cara kerja variabel dan tipe data dalam JavaScript.</li>
+                    <li><strong>Fungsi:</strong> Belajar cara membuat dan menggunakan fungsi.</li>
+                    <li><strong>DOM Manipulation:</strong> Memanipulasi dokumen HTML dengan JavaScript.</li>
+                </ul>
+            `;
+        });
+    </script>
+</body>
+</html>
