@@ -1,0 +1,75 @@
+<!-- bagian 1 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Praktikan PPW1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script type="text/javascript">
+        function askPraktikan() {
+            var isPraktikan = confirm("Apakah Anda praktikan PPW1?");
+    
+            if (isPraktikan) {
+                var name = prompt("Masukkan Nama:");
+                var nim = prompt("Masukkan NIM:");
+                var angkatan = prompt("Masukkan Angkatan:");
+
+// bagian 2
+                document.getElementById("result").innerHTML = `
+                    <div class="card shadow-lg mt-4">
+                        <div class="card-header bg-success text-white text-center">
+                            <h3>Data Praktikan PPW1</h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Nama</th>
+                                        <th>NIM</th>
+                                        <th>Angkatan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>${name}</td>
+                                        <td>${nim}</td>
+                                        <td>${angkatan}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+//bagian 3
+            } else {
+                document.getElementById("result").innerHTML = `
+                    <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+                        <h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i> Access Denied!</h4>
+                        <p>Anda bukan praktikan PPW1, anda tidak boleh masuk!</p>
+                        <hr>
+                        <p class="mb-0">Silakan hubungi administrator jika ini adalah kesalahan.</p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</head>
+<!-- bagian 4 -->
+<body onload="askPraktikan()">
+    <div class="container mt-5">
+        <div id="result"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
+
+
+
+
+

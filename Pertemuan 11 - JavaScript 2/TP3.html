@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Sederhana</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f8ff;
+        }
+        .calculator {
+            width: 380px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .calculator-display {
+            width: 100%;
+            height: 60px;
+            text-align: right;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #e0e0e0;
+        }
+        .calculator-buttons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .calculator-buttons button {
+            width: calc(25% - 10px);
+            height: 60px;
+            font-size: 18px;
+            margin: 5px;
+            border-radius: 5px;
+            flex: 1 1 calc(25% - 10px);
+            box-sizing: border-box;
+        }
+        .btn-number {
+            background-color: #a9d0f5;
+            border-color: #97c1e7;
+        }
+        .btn-operator {
+            background-color: #4b9cd3;
+            border-color: #3b89b6;
+            color: white;
+        }
+        .btn-equal {
+            background-color: #45b29d;
+            border-color: #3d9c87;
+            color: white;
+        }
+        .btn-clear {
+            background-color: #d9534f;
+            border-color: #c9302c;
+            color: white;
+        }
+        .btn-backspace {
+            background-color: #f0ad4e;
+            border-color: #ec971f;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #5a6268;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" class="calculator-display" disabled>
+        <div class="calculator-buttons">
+            <button class="btn btn-number" onclick="appendNumber('1')">1</button>
+            <button class="btn btn-number" onclick="appendNumber('2')">2</button>
+            <button class="btn btn-number" onclick="appendNumber('3')">3</button>
+            <button class="btn btn-operator" onclick="setOperator('+')">+</button>
+
+            <button class="btn btn-number" onclick="appendNumber('4')">4</button>
+            <button class="btn btn-number" onclick="appendNumber('5')">5</button>
+            <button class="btn btn-number" onclick="appendNumber('6')">6</button>
+            <button class="btn btn-operator" onclick="setOperator('-')">-</button>
+
+            <button class="btn btn-number" onclick="appendNumber('7')">7</button>
+            <button class="btn btn-number" onclick="appendNumber('8')">8</button>
+            <button class="btn btn-number" onclick="appendNumber('9')">9</button>
+            <button class="btn btn-operator" onclick="setOperator('*')">*</button>
+
+            <button class="btn btn-number" onclick="appendNumber('0')">0</button>
+            <button class="btn btn-number" onclick="appendNumber('.')">.</button>
+            <button class="btn btn-operator" onclick="setOperator('/')">/</button>
+            <button class="btn btn-equal" onclick="calculate()">=</button>
+
+            <button class="btn btn-secondary" onclick="setOperator('**')">^</button>
+            <button class="btn btn-secondary" onclick="sqrt()">√</button>
+            <button class="btn btn-secondary" onclick="percent()">%</button>
+            <button class="btn btn-clear" onclick="clearDisplay()">C</button>
+
+            <button class="btn btn-secondary" onclick="trigFunction('sin')">sin</button>
+            <button class="btn btn-secondary" onclick="trigFunction('cos')">cos</button>
+            <button class="btn btn-secondary" onclick="trigFunction('tan')">tan</button>
+            <button class="btn btn-backspace" onclick="backspace()">⌫</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let display = document.getElementById('display');
+        let firstNumber = '';
+        let secondNumber = '';
+        let operator = '';
+        let shouldResetDisplay = false;
+
+        function appendNumber(number) {
+            if (shouldResetDisplay) {
+                display.value = '';
+                shouldResetDisplay = false;
+            }
+            if (operator === '') {
+                firstNumber += number;
+                display.value = firstNumber;
+            } else {
+                secondNumber += number;
+                display.value = firstNumber + ' ' + operator + ' ' + secondNumber;
+            }
+        }
+
+        function setOperator(op) {
+            if (firstNumber !== '') {
+                if (secondNumber !== '') {
+                    calculate();
+                    firstNumber = display.value;
+                }
+                operator = op;
+                shouldResetDisplay = false;
+                display.value = firstNumber + ' ' + operator;
+            }
+        }
+
+        function calculate() {
+            let result;
+            const num1 = parseFloat(firstNumber);
+            const num2 = parseFloat(secondNumber);
+            
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                case '**':
+                    result = Math.pow(num1, num2);
+                    break;
+                default:
+                    return;
+            }
+            display.value = result;
+            firstNumber = result.toString();
+            secondNumber = '';
+            operator = '';
+            shouldResetDisplay = true;
+        }
+
+        function clearDisplay() {
+            firstNumber = '';
+            secondNumber = '';
+            operator = '';
+            display.value = '';
+        }
+
+        function sqrt() {
+            if (firstNumber !== '') {
+                const num = parseFloat(firstNumber);
+                display.value = Math.sqrt(num);
+                firstNumber = display.value;
+                secondNumber = '';
+                operator = '';
+                shouldResetDisplay = true;
+            }
+        }
+
+        function percent() {
+            if (firstNumber !== '') {
+                const num = parseFloat(firstNumber);
+                display.value = num / 100;
+                firstNumber = display.value;
+                secondNumber = '';
+                operator = '';
+                shouldResetDisplay = true;
+            }
+        }
+
+        function trigFunction(func) {
+            if (firstNumber !== '') {
+                let num = parseFloat(firstNumber);
+                num = num * Math.PI / 180; 
+                switch (func) {
+                    case 'sin':
+                        display.value = Math.sin(num);
+                        break;
+                    case 'cos':
+                        display.value = Math.cos(num);
+                        break;
+                    case 'tan':
+                        display.value = Math.tan(num);
+                        break;
+                }
+                firstNumber = display.value;
+                secondNumber = '';
+                operator = '';
+                shouldResetDisplay = true;
+            }
+        }
+
+        function backspace() {
+            if (shouldResetDisplay) {
+                return;
+            }
+            if (operator === '') {
+                firstNumber = firstNumber.slice(0, -1);
+                display.value = firstNumber;
+            } else if (secondNumber === '') {
+                operator = '';
+                display.value = firstNumber;
+            } else {
+                secondNumber = secondNumber.slice(0, -1);
+                display.value = firstNumber + ' ' + operator + ' ' + secondNumber;
+            }
+        }
+    </script>
+</body>
+</html>
